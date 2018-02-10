@@ -31,16 +31,23 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbWords = new System.Windows.Forms.GroupBox();
+            this.gbAnalogies = new System.Windows.Forms.GroupBox();
             this.txtWordSearch = new System.Windows.Forms.TextBox();
             this.btnSearchWord = new System.Windows.Forms.Button();
             this.txtAnalogies = new System.Windows.Forms.TextBox();
             this.btnAnalogySearch = new System.Windows.Forms.Button();
             this.cmbAnalogy = new System.Windows.Forms.ComboBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.picViewtSNE = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.numCloseW = new System.Windows.Forms.NumericUpDown();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbWords.SuspendLayout();
+            this.gbAnalogies.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picViewtSNE)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCloseW)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -68,28 +75,32 @@
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
-            // groupBox1
+            // gbWords
             // 
-            this.groupBox1.Controls.Add(this.btnSearchWord);
-            this.groupBox1.Controls.Add(this.txtWordSearch);
-            this.groupBox1.Location = new System.Drawing.Point(12, 27);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(229, 54);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Words";
+            this.gbWords.Controls.Add(this.numCloseW);
+            this.gbWords.Controls.Add(this.label1);
+            this.gbWords.Controls.Add(this.btnSearchWord);
+            this.gbWords.Controls.Add(this.txtWordSearch);
+            this.gbWords.Enabled = false;
+            this.gbWords.Location = new System.Drawing.Point(12, 27);
+            this.gbWords.Name = "gbWords";
+            this.gbWords.Size = new System.Drawing.Size(229, 83);
+            this.gbWords.TabIndex = 1;
+            this.gbWords.TabStop = false;
+            this.gbWords.Text = "Words";
             // 
-            // groupBox2
+            // gbAnalogies
             // 
-            this.groupBox2.Controls.Add(this.cmbAnalogy);
-            this.groupBox2.Controls.Add(this.btnAnalogySearch);
-            this.groupBox2.Controls.Add(this.txtAnalogies);
-            this.groupBox2.Location = new System.Drawing.Point(12, 87);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(229, 168);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Analogies";
+            this.gbAnalogies.Controls.Add(this.cmbAnalogy);
+            this.gbAnalogies.Controls.Add(this.btnAnalogySearch);
+            this.gbAnalogies.Controls.Add(this.txtAnalogies);
+            this.gbAnalogies.Enabled = false;
+            this.gbAnalogies.Location = new System.Drawing.Point(12, 129);
+            this.gbAnalogies.Name = "gbAnalogies";
+            this.gbAnalogies.Size = new System.Drawing.Size(229, 168);
+            this.gbAnalogies.TabIndex = 1;
+            this.gbAnalogies.TabStop = false;
+            this.gbAnalogies.Text = "Analogies";
             // 
             // txtWordSearch
             // 
@@ -97,6 +108,7 @@
             this.txtWordSearch.Name = "txtWordSearch";
             this.txtWordSearch.Size = new System.Drawing.Size(136, 20);
             this.txtWordSearch.TabIndex = 0;
+            this.txtWordSearch.Text = "petróleo carro medicina";
             // 
             // btnSearchWord
             // 
@@ -137,13 +149,70 @@
             this.cmbAnalogy.Size = new System.Drawing.Size(136, 21);
             this.cmbAnalogy.TabIndex = 3;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.picViewtSNE);
+            this.groupBox3.Location = new System.Drawing.Point(247, 27);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(720, 357);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Visualization - t-Distributed Stochastic Neighbor Embedding (t-SNE)";
+            // 
+            // picViewtSNE
+            // 
+            this.picViewtSNE.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picViewtSNE.Location = new System.Drawing.Point(6, 19);
+            this.picViewtSNE.Name = "picViewtSNE";
+            this.picViewtSNE.Size = new System.Drawing.Size(708, 332);
+            this.picViewtSNE.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picViewtSNE.TabIndex = 0;
+            this.picViewtSNE.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 54);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(118, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Number of close words:";
+            // 
+            // numCloseW
+            // 
+            this.numCloseW.Location = new System.Drawing.Point(148, 52);
+            this.numCloseW.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.numCloseW.Minimum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.numCloseW.Name = "numCloseW";
+            this.numCloseW.Size = new System.Drawing.Size(75, 20);
+            this.numCloseW.TabIndex = 3;
+            this.numCloseW.Value = new decimal(new int[] {
+            70,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 396);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.gbAnalogies);
+            this.Controls.Add(this.gbWords);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
@@ -152,10 +221,13 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbWords.ResumeLayout(false);
+            this.gbWords.PerformLayout();
+            this.gbAnalogies.ResumeLayout(false);
+            this.gbAnalogies.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picViewtSNE)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numCloseW)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -166,13 +238,17 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbWords;
         private System.Windows.Forms.Button btnSearchWord;
         private System.Windows.Forms.TextBox txtWordSearch;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbAnalogies;
         private System.Windows.Forms.ComboBox cmbAnalogy;
         private System.Windows.Forms.Button btnAnalogySearch;
         private System.Windows.Forms.TextBox txtAnalogies;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.PictureBox picViewtSNE;
+        private System.Windows.Forms.NumericUpDown numCloseW;
+        private System.Windows.Forms.Label label1;
     }
 }
 

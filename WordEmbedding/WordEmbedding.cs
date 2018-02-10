@@ -43,9 +43,20 @@ namespace WordEmbedding
                     }
                 }
             }
+
+            foreach(KeyValuePair<string,float[]> kvp in dicWords )
+            {
+                float[] v = kvp.Value;
+                double vLen = 0;
+                for (int k = 0; k < _wordVecLen; k++) vLen += v[k] * v[k];
+                _vecLens.Add(Math.Sqrt(vLen));
+            }
         }
         /// <summary>Word dictionary</summary>
         public SortedDictionary<string, float[]> dicWords = new SortedDictionary<string, float[]>();
+
+        /// <summary>Vector lengths</summary>
+        public List<double> _vecLens = new List<double>();
 
         /// <summary>Word vector length</summary>
         int _wordVecLen;
@@ -130,9 +141,7 @@ namespace WordEmbedding
                 lstWd[k].w1 = label;
                 lstWd[k].w2 = words[k];
                 float[] v2 = wordvecs[k];
-                double w2Abs = 0;
-                for (int q = 0; q < v1.Length; q++) w2Abs += v2[q] * v2[q];
-                w2Abs = Math.Sqrt(w2Abs);
+                double w2Abs = _vecLens[k];
                 double v1v2 = 0;
                 for (int q = 0; q < v1.Length; q++) v1v2 += v1[q] * v2[q];
                 lstWd[k].distance = 1.0f - (float)(v1v2 / (w1Abs * w2Abs));
