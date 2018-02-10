@@ -13,3 +13,5 @@ Go to File -> Open, open the word embedding.
 Look for one or more words to plot groups.
 
 Check the answer for Analogies.
+
+![alt text](https://github.com/douglas125/WordEmbedding/blob/master/wordEmbeddingScreen.jpg)
